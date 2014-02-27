@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   initialize="LoginMain.onInit(mainPanel)">
+
+	<fx:Script>
+		<![CDATA[
+			import com.gjs.manager.login.LoginMain;
+		]]>
+	</fx:Script>
+	
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		ToolTip1
+		{
+			fontFamily: "Arial";
+			fontSize: 50;
+			fontStyle: "italic";
+			color: #FFF880;
+			backgroundColor: #33CC99;
+		}
+	</fx:Style>
+
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+
+	
+	<s:Panel id="mainPanel" title="gjs" width="100%" height="100%">
+		<!--<s:Button label="确定" horizontalCenter="-139" verticalCenter="-53" toolTip="新员工请到管理部申请账号！"
+				  click="Login_main.button_login_clickHandler(userName, passwd)"/>
+		<s:Button label="注册" horizontalCenter="-257" verticalCenter="-53" 
+				  />
+		<s:Label text="用户名" horizontalCenter="-264" verticalCenter="-136"/>
+		<s:Label text="密码" horizontalCenter="-258" verticalCenter="-103"/>
+		<s:TextInput id="userName" horizontalCenter="-155" verticalCenter="-141"/>
+		<s:TextInput id="passwd" horizontalCenter="-155" verticalCenter="-108"/>-->
+	</s:Panel>
+	
+</s:Application>

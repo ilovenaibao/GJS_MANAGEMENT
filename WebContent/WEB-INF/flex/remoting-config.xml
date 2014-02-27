@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service" class="flex.messaging.services.RemotingService">
+
+	<adapters>
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+
+	<default-channels>
+		<channel ref="my-amf" />
+	</default-channels>
+
+	<destination id="com.Demos.DemoServices">
+		<properties>
+			<source>com.Demos.DemoServices</source>
+		</properties>
+	</destination>
+	
+	<!-- Java代码公用函数部分-->
+	<destination id="com.gjs.manager.staticfunc.JavaStaticFunc">
+		<properties>
+			<source>com.gjs.manager.staticfunc.JavaStaticFunc</source>
+		</properties>
+	</destination>
+	
+	<!--	Java代码login用户界面-->
+	<destination id="com.gjs.manager.login.JavaLoginMain">
+		<properties>
+			<source>com.gjs.manager.login.JavaLoginMain</source>
+		</properties>
+	</destination>
+
+	<!--	Java代码客户信息界面-->
+	<destination id="com.gjs.manager.client.JavaClientMain">
+		<properties>
+			<source>com.gjs.manager.client.JavaClientMain</source>
+		</properties>
+	</destination>
+
+</service>

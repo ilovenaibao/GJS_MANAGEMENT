@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   minWidth="955" 
+			   minHeight="600">
+	<fx:Script>
+		<![CDATA[
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			//用于返回结果正确时的处理事件
+			private function method1_resultHandler(event:ResultEvent):void
+			{
+				testResult.text = event.result.toString();
+			}
+			
+			//用于返回结果错误时的处理事件
+			private function method1_faultHandler(event:FaultEvent):void
+			{
+				
+			}
+			
+			private function button1_clickHandler(event:MouseEvent):void
+			{
+				var testResults:String = testBtn.label;
+				demoServices.testRemoteServices(testResults);    
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RemoteObject destination="com.Demos.DemoServices" id="demoServices">
+			<s:method name="testRemoteServices" result="method1_resultHandler(event)"/>
+		</s:RemoteObject>
+	</fx:Declarations>
+	
+	<s:VGroup paddingTop="100" horizontalAlign="center" width="100%">
+		<s:Button id="testBtn" label="测试通信" click="button1_clickHandler(event)"/>
+		<s:TextInput id="testResult"/>
+	</s:VGroup>
+</s:Application>
